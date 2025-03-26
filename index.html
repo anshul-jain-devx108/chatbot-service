@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SSE Test</title>
+</head>
+<body>
+  <h1>Server-Sent Events (SSE) Test</h1>
+  <ul id="messages"></ul>
+
+  <script>
+    const eventSource = new EventSource("http://localhost:3000/api/chat/stream");
+
+    eventSource.onmessage = (event) => {
+      const messageList = document.getElementById("messages");
+      const li = document.createElement("li");
+      li.textContent = `New message: ${event.data}`;
+      messageList.appendChild(li);
+    };
+
+    eventSource.onerror = (error) => {
+      console.error("SSE Error:", error);
+      eventSource.close();
+    };
+  </script>
+</body>
+</html>
