@@ -14,7 +14,8 @@ class GeminiService {
     // This example sends only a text prompt. If you need image content, adjust accordingly.
     const requestBody = {
       // model: "google/gemma-3-1b-it:free",
-      model: "meta-llama/llama-3.2-3b-instruct",
+      // model: "meta-llama/llama-3.2-3b-instruct",
+      model: "google/gemini-flash-1.5-8b-exp",
       messages: [
         {
           role: "user",
