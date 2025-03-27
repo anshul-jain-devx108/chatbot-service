@@ -9,7 +9,7 @@
 //   static async sendMessage(req, res) {
 //     try {
 //       console.log("DEBUG: Received request in sendMessage");
-//       const { chatId, message } = req.body;
+//       const { chatId, message } = req.body
 //       const userId = req.user.email;
 //       const currentChatId = chatId || uuidv4();
 
